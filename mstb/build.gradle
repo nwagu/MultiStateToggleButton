@@ -5,7 +5,7 @@ apply plugin: 'com.jfrog.bintray'
 def versionCode = 1
 def versionName = "0.0.1"
 group = "com.nwagu.multistatetogglebutton"
-version = mVersionName
+version = versionName
 
 def siteUrl = 'https://github.com/nwagu/MultiStateToggleButton'
 def gitUrl = 'https://github.com/nwagu/MultiStateToggleButton.git'
