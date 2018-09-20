@@ -11,7 +11,7 @@ buildscript {
 }
 
 allprojects {
-    group = 'org.honorato'
+    group = 'com.nwagu'
     repositories {
         jcenter()
     }

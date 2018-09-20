@@ -66,20 +66,21 @@ install {
                 name 'A multi-state toggle button for Android'
                 url siteUrl
 
-                // Set your license
                 licenses {
                     license {
                         name 'MIT License'
                         url 'http://opensource.org/licenses/MIT'
                     }
                 }
+                
                 developers {
                     developer {
-                        id 'jlhonora'
-                        name 'Jose Luis Honorato'
-                        email 'joseluishonorato@gmail.com'
+                        id 'nwagu'
+                        name 'Chukwuemeka Nwagu'
+                        email 'c_nwagu@yahoo.com'
                     }
                 }
+                
                 scm {
                     connection gitUrl
                     developerConnection gitUrl
