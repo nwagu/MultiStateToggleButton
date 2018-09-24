@@ -166,7 +166,7 @@ public class MultiStateToggleButton extends ToggleButton {
                 b.setCompoundDrawablesWithIntrinsicBounds(imageResourceIds[i], 0, 0, 0);
             }
             final int position = i;
-            b.setOnClickListener(new View.OnClickListener() {
+            b.setOnClickListener(new OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
@@ -224,7 +224,7 @@ public class MultiStateToggleButton extends ToggleButton {
         for (int i = 0; i < elementCount; i++) {
             View b = buttons[i];
             final int position = i;
-            b.setOnClickListener(new View.OnClickListener() {
+            b.setOnClickListener(new OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
