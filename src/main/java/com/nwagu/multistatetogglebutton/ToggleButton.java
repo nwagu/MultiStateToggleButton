@@ -18,7 +18,8 @@ public abstract class ToggleButton extends LinearLayout {
 
     OnValueChangedListener listener;
     Context context;
-    @ColorInt int colorPressed, colorNotPressed; // Resolved colors (format 0xAARRGGBB)
+    @ColorInt
+    int colorPressed, colorNotPressed; // Resolved colors (format 0xAARRGGBB)
     int colorPressedText, colorPressedBackground;
     int colorNotPressedText, colorNotPressedBackground;
     int pressedBackgroundResource, notPressedBackgroundResource;

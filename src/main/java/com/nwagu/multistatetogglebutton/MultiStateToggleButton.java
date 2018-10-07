@@ -32,7 +32,7 @@ public class MultiStateToggleButton extends ToggleButton {
     /**
      * The specified texts
      */
-    CharSequence[]   texts;
+    CharSequence[] texts;
 
     /**
      * If true, multiple buttons can be pressed at the same time
@@ -113,6 +113,11 @@ public class MultiStateToggleButton extends ToggleButton {
         }
     }
 
+    @Override
+    public void setOrientation(int orientation) {
+        super.setOrientation(orientation);
+    }
+
     /**
      * Set multiple buttons with the specified texts and default
      * initial values. Initial states are allowed, but both
@@ -136,7 +141,7 @@ public class MultiStateToggleButton extends ToggleButton {
             enableDefaultSelection = false;
         }
 
-        setOrientation(LinearLayout.HORIZONTAL);
+        //setOrientation(LinearLayout.HORIZONTAL);
         setGravity(Gravity.CENTER_VERTICAL);
 
         LayoutInflater inflater = (LayoutInflater) context
@@ -210,7 +215,7 @@ public class MultiStateToggleButton extends ToggleButton {
             enableDefaultSelection = false;
         }
 
-        setOrientation(LinearLayout.HORIZONTAL);
+        setOrientation(LinearLayout.VERTICAL);
         setGravity(Gravity.CENTER_VERTICAL);
 
         LayoutInflater inflater = (LayoutInflater) context
