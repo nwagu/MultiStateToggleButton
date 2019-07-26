@@ -17,7 +17,7 @@ class MultiStateToggleButton : ToggleButton {
 
     private var buttons: MutableList<View>? = null
 
-    var texts: Array<CharSequence>? = null
+    var texts: Array<String>? = null
         internal set
 
     private var mMultipleChoice = false
@@ -61,7 +61,7 @@ class MultiStateToggleButton : ToggleButton {
 
         val a = context.obtainStyledAttributes(attrs, R.styleable.MultiStateToggleButton, 0, 0)
         try {
-            val texts = a.getTextArray(R.styleable.MultiStateToggleButton_values)
+            val texts = a.getTextArray(R.styleable.MultiStateToggleButton_values) as Array<String>
             colorPressed = a.getColor(R.styleable.MultiStateToggleButton_mstbPrimaryColor, 0)
             colorNotPressed = a.getColor(R.styleable.MultiStateToggleButton_mstbSecondaryColor, 0)
             colorPressedText = a.getColor(R.styleable.MultiStateToggleButton_mstbColorPressedText, 0)
@@ -76,11 +76,7 @@ class MultiStateToggleButton : ToggleButton {
             colorNotPressedBackground = a.getColor(R.styleable.MultiStateToggleButton_mstbColorNotPressedBackground, 0)
             notPressedBackgroundResource = a.getResourceId(R.styleable.MultiStateToggleButton_mstbColorNotPressedBackgroundResource, 0)
 
-            var length = 0
-            if (texts != null) {
-                length = texts.size
-            }
-            setElements(texts, null, BooleanArray(length))
+            setElements(texts, null, BooleanArray(texts.size))
         } finally {
             a.recycle()
         }
@@ -125,7 +121,7 @@ class MultiStateToggleButton : ToggleButton {
         }
     }
 
-    private fun setElements(texts: Array<CharSequence>?, imageResourceIds: IntArray?, selected: BooleanArray?) {
+    private fun setElements(texts: Array<String>?, imageResourceIds: IntArray?, selected: BooleanArray?) {
         this.texts = texts
         val textCount = texts?.size ?: 0
         val iconCount = imageResourceIds?.size ?: 0
@@ -221,7 +217,7 @@ class MultiStateToggleButton : ToggleButton {
         mainLayout!!.setBackgroundResource(R.drawable.button_section_shape)
     }
 
-    fun setElements(elements: Array<CharSequence>?) {
+    fun setElements(elements: Array<String>?) {
         val size = elements?.size ?: 0
         setElements(elements, null, BooleanArray(size))
     }
@@ -245,13 +241,13 @@ class MultiStateToggleButton : ToggleButton {
         setElements(elements, selectedArray)
     }
 
-    private fun setElements(texts: List<*>?, selected: BooleanArray) {
+    private fun setElements(texts: List<String>?, selected: BooleanArray) {
         var texts_ = texts
         if (texts_ == null) {
-            texts_ = arrayListOf(String)
+            texts_ = arrayListOf(String())
         }
         val size = texts_.size
-        setElements(texts_.toTypedArray<String>(), null, selected)
+        setElements(texts_.toTypedArray(), null, selected)
     }
 
     fun setElements(arrayResourceId: Int, selectedPosition: Int) {
@@ -326,7 +322,7 @@ class MultiStateToggleButton : ToggleButton {
     }
 
     private fun refresh() {
-        val states = states
+        val states = states!!
         for (i in states.indices) {
             setButtonState(buttons!![i], states[i])
         }
