@@ -62,6 +62,6 @@ dependencies {
 }
 
 if (project.rootProject.file('local.properties').exists()) {
-    apply from: 'https://raw.githubusercontent.com/nwagu/JCenter/master/install.gradle'
-    apply from: 'https://raw.githubusercontent.com/nwagu/JCenter/master/bintray.gradle'
+    apply from: 'https://raw.githubusercontent.com/nwagu/jcenter/master/installv.gradle'
+    apply from: 'https://raw.githubusercontent.com/nwagu/jcenter/master/bintrayv.gradle'
 }
