@@ -1,10 +1,11 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion 28
-
 
     defaultConfig {
         minSdkVersion 16
@@ -25,6 +26,27 @@ android {
 
 }
 
+ext {
+
+    bintrayRepo = "MultiStateToggleButton"
+    bintrayName = "com.nwagu.mstb"
+
+    publishedGroupId = 'com.nwagu.mstb'
+    libraryName = 'mstb'
+    artifact = 'mstb'
+
+    libraryDescription = ''
+
+    siteUrl = 'https://github.com/nwagu/MultiStateToggleButton'
+    gitUrl = 'https://github.com/nwagu/MultiStateToggleButton.git'
+
+    libraryVersion = '0.0.1'
+
+    developerId = 'nwagu'
+    developerName = 'Chukwuemeka Nwagu'
+    developerEmail = 'developer.nwagu@gmail.com'
+}
+
 repositories {
     mavenCentral()
 }
@@ -37,4 +59,9 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+
+if (project.rootProject.file('local.properties').exists()) {
+    apply from: 'https://raw.githubusercontent.com/nwagu/JCenter/master/install.gradle'
+    apply from: 'https://raw.githubusercontent.com/nwagu/JCenter/master/bintray.gradle'
 }

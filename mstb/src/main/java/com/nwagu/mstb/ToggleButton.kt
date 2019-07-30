@@ -37,7 +37,7 @@ abstract class ToggleButton : LinearLayout {
         this.context = context
     }
 
-    fun setOnValueChangedListener(l: OnValueChangedListener) {
+    fun setOnValueChangedListener(l: OnValueChangedListener?) {
         this.listener = l
     }
 

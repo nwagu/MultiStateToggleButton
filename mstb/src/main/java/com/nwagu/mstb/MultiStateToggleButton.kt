@@ -61,7 +61,7 @@ class MultiStateToggleButton : ToggleButton {
 
         val a = context.obtainStyledAttributes(attrs, R.styleable.MultiStateToggleButton, 0, 0)
         try {
-            val texts = a.getTextArray(R.styleable.MultiStateToggleButton_values) as Array<String>
+            val texts = a.getTextArray(R.styleable.MultiStateToggleButton_values)
             colorPressed = a.getColor(R.styleable.MultiStateToggleButton_mstbPrimaryColor, 0)
             colorNotPressed = a.getColor(R.styleable.MultiStateToggleButton_mstbSecondaryColor, 0)
             colorPressedText = a.getColor(R.styleable.MultiStateToggleButton_mstbColorPressedText, 0)
@@ -76,7 +76,7 @@ class MultiStateToggleButton : ToggleButton {
             colorNotPressedBackground = a.getColor(R.styleable.MultiStateToggleButton_mstbColorNotPressedBackground, 0)
             notPressedBackgroundResource = a.getResourceId(R.styleable.MultiStateToggleButton_mstbColorNotPressedBackgroundResource, 0)
 
-            setElements(texts, null, BooleanArray(texts.size))
+            setElements(texts as Array<String>,null, BooleanArray(texts.size))
         } finally {
             a.recycle()
         }
